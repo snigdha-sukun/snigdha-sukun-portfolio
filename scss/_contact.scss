@@ -29,9 +29,34 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    padding: 1rem;
 
     a {
         height: 2rem;
         width: 2rem;
     }
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+
+    a {
+        color: v.$highlight;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+            color: v.$primary-blue;
+        }
+    }
+}
+
+.contact-icon {
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
 }
