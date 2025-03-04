@@ -1,0 +1,122 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Hero Section
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+        font-size: 4rem;
+        color: v.$primary-blue;
+    }
+
+    p {
+        margin: 1rem 0;
+        color: v.$sky-blue-muted;
+        font-family: v.$font-family-highlight;
+    }
+
+    span {
+        text-decoration: none;
+        font-family: inherit;
+    }
+
+    a {
+        background-color: v.$highlight;
+        color: v.$white;
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+
+        &:hover {
+            background-color: v.$burnt-gold;
+            color: v.$primary-blue;
+        }
+    }
+
+}
+
+.hero-button {
+    margin-top: 2rem;
+}
+
+// Add typewriter animation to hero text if you want
+.hero-text {
+    font-size: 2.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    border-right: 2px solid v.$terracotta;
+    animation: typing 10s steps(30) infinite, blink-caret 0.5s step-end infinite;
+
+    @keyframes typing {
+
+        from,
+        to {
+            max-width: 0;
+        }
+
+        50% {
+            max-width: 100%;
+        }
+    }
+
+    @keyframes blink-caret {
+        50% {
+            border-color: transparent;
+        }
+    }
+}
+
+.hero-image {
+    width: auto;
+    height: 30rem;
+    margin-left: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hi_icon {
+    display: inline-block;
+    animation: tilt-n-move-shaking 1s infinite ease-in-out;
+
+    @keyframes tilt-n-move-shaking {
+        0% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        25% {
+            transform: translate(5px, 5px) rotate(5deg);
+        }
+
+        50% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+
+        75% {
+            transform: translate(-5px, 5px) rotate(-5deg);
+        }
+
+        100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+    }
+}
+
+.special-i {
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-color: v.$highlight;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+}

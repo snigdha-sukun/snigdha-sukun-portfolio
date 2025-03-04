@@ -1,0 +1,105 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Base Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: v.$font-family;
+    color: v.$text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: v.$font-family-heading;
+}
+
+p {
+    font-size: 20px;
+}
+
+a {
+    font-family: v.$font-family-buttons;
+    text-decoration: none;
+}
+
+span {
+    font-family: v.$font-family-highlight;
+    text-decoration: underline;
+}
+
+// Header
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    padding: 2rem 1rem;
+    position: sticky;
+    top: 0;
+    background-color: v.$soft-blush-pink;
+    z-index: 1000;
+    box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
+
+    nav {
+        ul {
+            display: flex;
+
+            li {
+                margin-left: 2rem;
+
+                a {
+                    color: v.$primary-blue;
+                    text-decoration: none;
+                    font-size: 1.5rem;
+
+                    &:hover {
+                        color: v.$highlight;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Sections
+section {
+    padding: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+    color: v.$primary-blue;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid v.$sky-blue-muted;
+    display: inline-block;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+// Footer
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: v.$primary-blue;
+    color: v.$white;
+
+    a {
+        color: v.$sky-blue-muted;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Contact Section
+.contact {
+    text-align: center;
+    background-color: v.$warm-beige;
+
+    p {
+        margin: 0.5rem 0;
+        font-size: 1.1rem;
+    }
+
+    a {
+        color: v.$sky-blue-muted;
+        text-decoration: underline;
+
+        &:hover {
+            color: v.$highlight;
+        }
+    }
+}
+
+.contact-links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+        height: 2rem;
+        width: 2rem;
+    }
+}

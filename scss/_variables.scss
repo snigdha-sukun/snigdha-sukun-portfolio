@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Kode+Mono:wght@400..700&family=Major+Mono+Display&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne+Mono&display=swap');
+
+// Font Family
+$font-family: 'Space Mono', monospace;
+$font-family-code: 'Cutive Mono', monospace;
+$font-family-buttons: 'Major Mono Display', monospace;
+$font-family-heading: 'Kode Mono', monospace;
+$font-family-highlight: 'Syne Mono', monospace;
+
+$primary-blue: #1e3a8a; // Dutch core
+$highlight: #e11d48; // Bindi red
+$background: #F0F4F8; // Soft canvas
+$text-color: #1C1C1C; // Readable body text
+$white: #FFFFFF; // White background
+
+// New supporting colors:
+$sky-blue-muted: #86A8E7; // A calmer blue
+$terracotta: #D16A50; // Earthy warmth (Indian)
+$burnt-gold: #C7A539; // Sophisticated Indian accent (instead of bright yellow)
+$soft-blush-pink: #f5dade; // Soft, feminine pink
+
+// New background colors:
+$soft-grey: #f0f4f8; // Soft grey for background
+$super-light-pink: #fdf2f8; // Super light pink for background
+$warm-beige: #fff7ed; // Warm beige for background
+$light-blue: #ecf3fb; // Light blue for background
+$light-green: #f3f8f6; // Light green for background
+$light-yellow: #faf8f0; // Light yellow for background

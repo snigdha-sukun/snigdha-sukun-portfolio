@@ -1,0 +1,44 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+// Projects
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background-color: v.$light-green;
+
+    @include m.respond(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond(mobile) {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        background-color: v.$white;
+        border: 1px solid v.$sky-blue-muted;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        h3 {
+            font-size: 1.25rem;
+            color: v.$primary-blue;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+
+        a {
+            color: v.$sky-blue-muted;
+            text-decoration: underline;
+
+            &:hover {
+                color: v.$highlight;
+            }
+        }
+    }
+}
