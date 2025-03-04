@@ -9,13 +9,13 @@
     justify-content: center;
     gap: 2rem;
 
-    span {
+    .years {
         font-size: 1.5rem;
         text-decoration: none;
     }
 
     ul {
-        list-style-type:circle;
+        list-style-type: circle;
         padding: 1rem;
         font-size: 1.2rem;
     }
@@ -29,11 +29,19 @@
             content: '';
             position: absolute;
             width: 6px;
-            background-color: white;
+            background-color: v.$white;
             top: 0;
             bottom: 0;
             left: 50%;
             margin-left: -3px;
+
+            @include m.responsive('tablet') {
+                left: 31px;
+            }
+
+            @include m.responsive('mobile') {
+                left: 31px;
+            }
         }
 
         .timeline-item {
@@ -42,14 +50,42 @@
             background-color: inherit;
             width: 50%;
 
+            @include m.responsive('tablet') {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            @include m.responsive('mobile') {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            &::before {
+                @include m.responsive('tablet') {
+                    left: 60px;
+                    border: medium solid white;
+                    border-width: 10px 10px 10px 0;
+                    border-color: transparent white transparent transparent;
+                }
+
+                @include m.responsive('mobile') {
+                    left: 60px;
+                    border: medium solid white;
+                    border-width: 10px 10px 10px 0;
+                    border-color: transparent white transparent transparent;
+                }
+            }
+
             &::after {
                 content: '';
                 position: absolute;
                 width: 25px;
                 height: 25px;
                 right: -17px;
-                background-color: white;
-                border: 4px solid #FF9F55;
+                background-color: v.$white;
+                border: 4px solid v.$highlight;
                 top: 15px;
                 border-radius: 50%;
                 z-index: 1;
@@ -57,14 +93,14 @@
 
             .timeline-content {
                 padding: 20px 30px;
-                background-color: white;
+                background-color: v.$white;
                 position: relative;
                 border-radius: 6px;
             }
         }
 
         .left {
-            left: 0;
+            left: 0%;
 
             &::before {
                 content: " ";
@@ -74,14 +110,32 @@
                 width: 0;
                 z-index: 1;
                 right: 30px;
-                border: medium solid white;
+                border: medium solid v.$white;
                 border-width: 10px 0 10px 10px;
-                border-color: transparent transparent transparent white;
+                border-color: transparent transparent transparent v.$white;
+            }
+
+            &::after {
+                @include m.responsive('tablet') {
+                    left: 15px;
+                }
+
+                @include m.responsive('mobile') {
+                    left: 15px;
+                }
             }
         }
 
         .right {
             left: 50%;
+
+            @include m.responsive('tablet') {
+                left: 0%;
+            }
+
+            @include m.responsive('mobile') {
+                left: 0%;
+            }
 
             &::before {
                 content: " ";
@@ -91,13 +145,21 @@
                 width: 0;
                 z-index: 1;
                 left: 30px;
-                border: medium solid white;
+                border: medium solid v.$white;
                 border-width: 10px 10px 10px 0;
-                border-color: transparent white transparent transparent;
+                border-color: transparent v.$white transparent transparent;
             }
 
             &::after {
                 left: -16px;
+
+                @include m.responsive('tablet') {
+                    left: 15px;
+                }
+
+                @include m.responsive('mobile') {
+                    left: 15px;
+                }
             }
         }
     }

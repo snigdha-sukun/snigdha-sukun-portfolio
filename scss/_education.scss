@@ -3,4 +3,8 @@
 
 .education {
     background-color: v.$light-yellow;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    place-items: center;
 }
