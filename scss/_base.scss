@@ -80,9 +80,14 @@ h2 {
     font-size: 3rem;
     color: v.$primary-blue;
     margin-bottom: 1rem;
-    border-bottom: 2px solid v.$sky-blue-muted;
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    span {
+        font-family: inherit;
+        border-bottom: 2px solid v.$sky-blue-muted;
+    }
 }
 
 h3 {
@@ -140,4 +145,34 @@ footer {
 .years {
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+.header-icon {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-bottom: none;
+}
+
+.tech-stack-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    div {
+        height: 2rem;
+        width: 2rem;
+        margin: 0.5rem 1rem;
+        position: relative;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+            top: -0.5rem;
+        }
+    }
 }

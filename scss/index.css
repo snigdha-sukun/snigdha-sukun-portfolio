@@ -69,9 +69,13 @@ h2 {
   font-size: 3rem;
   color: #1e3a8a;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+h2 span {
+  font-family: inherit;
   border-bottom: 2px solid #86A8E7;
-  display: inline-block;
-  text-align: center;
 }
 
 h3 {
@@ -122,6 +126,34 @@ footer .heart {
   font-weight: 400;
 }
 
+.header-icon {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border-bottom: none;
+}
+
+.tech-stack-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tech-stack-container div {
+  height: 2rem;
+  width: 2rem;
+  margin: 0.5rem 1rem;
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.tech-stack-container div:hover {
+  top: -0.5rem;
+}
+
 .hero {
   display: flex;
   align-items: center;
@@ -149,7 +181,7 @@ footer .heart {
 }
 .hero a:hover {
   background-color: #f5dade;
-  color: #1e3a8a;
+  color: #e11d48;
 }
 
 .hero-button {
@@ -224,14 +256,25 @@ footer .heart {
 }
 
 .about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #f0f4f8;
+}
+.about .about-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  place-items: center;
   gap: 1rem;
-  background-color: #f0f4f8;
 }
 
 .contact {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #fff7ed;
 }
 .contact p {
@@ -473,27 +516,6 @@ footer .heart {
   .experience .timeline .right::after {
     left: 15px;
   }
-}
-
-.tech-stack-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.tech-stack-container div {
-  height: 2rem;
-  width: 2rem;
-  margin: 0.5rem 1rem;
-  position: relative;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.tech-stack-container div:hover {
-  top: -0.5rem;
 }
 
 .skills {

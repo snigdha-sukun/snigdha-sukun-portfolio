@@ -159,26 +159,3 @@
         }
     }
 }
-
-.tech-stack-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    div {
-        height: 2rem;
-        width: 2rem;
-        margin: 0.5rem 1rem;
-        position: relative;
-        top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-
-        &:hover {
-            top: -0.5rem;
-        }
-    }
-}
