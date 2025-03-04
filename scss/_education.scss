@@ -3,8 +3,19 @@
 
 .education {
     background-color: v.$light-yellow;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .education-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        place-items: center;
+
+        p {
+            font-size: 1.2rem;
+        }
+    }
 }

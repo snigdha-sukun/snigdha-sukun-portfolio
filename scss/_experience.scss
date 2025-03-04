@@ -9,11 +9,6 @@
     justify-content: center;
     gap: 2rem;
 
-    .years {
-        font-size: 1.5rem;
-        text-decoration: none;
-    }
-
     ul {
         list-style-type: circle;
         padding: 1rem;
@@ -35,11 +30,11 @@
             left: 50%;
             margin-left: -3px;
 
-            @include m.responsive('tablet') {
+            @include m.respond('tablet') {
                 left: 31px;
             }
 
-            @include m.responsive('mobile') {
+            @include m.respond('mobile') {
                 left: 31px;
             }
         }
@@ -50,27 +45,27 @@
             background-color: inherit;
             width: 50%;
 
-            @include m.responsive('tablet') {
+            @include m.respond('tablet') {
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
             }
 
-            @include m.responsive('mobile') {
+            @include m.respond('mobile') {
                 width: 100%;
                 padding-left: 70px;
                 padding-right: 25px;
             }
 
             &::before {
-                @include m.responsive('tablet') {
+                @include m.respond('tablet') {
                     left: 60px;
                     border: medium solid white;
                     border-width: 10px 10px 10px 0;
                     border-color: transparent white transparent transparent;
                 }
 
-                @include m.responsive('mobile') {
+                @include m.respond('mobile') {
                     left: 60px;
                     border: medium solid white;
                     border-width: 10px 10px 10px 0;
@@ -116,11 +111,11 @@
             }
 
             &::after {
-                @include m.responsive('tablet') {
+                @include m.respond('tablet') {
                     left: 15px;
                 }
 
-                @include m.responsive('mobile') {
+                @include m.respond('mobile') {
                     left: 15px;
                 }
             }
@@ -129,11 +124,11 @@
         .right {
             left: 50%;
 
-            @include m.responsive('tablet') {
+            @include m.respond('tablet') {
                 left: 0%;
             }
 
-            @include m.responsive('mobile') {
+            @include m.respond('mobile') {
                 left: 0%;
             }
 
@@ -153,14 +148,37 @@
             &::after {
                 left: -16px;
 
-                @include m.responsive('tablet') {
+                @include m.respond('tablet') {
                     left: 15px;
                 }
 
-                @include m.responsive('mobile') {
+                @include m.respond('mobile') {
                     left: 15px;
                 }
             }
+        }
+    }
+}
+
+.tech-stack-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    div {
+        height: 2rem;
+        width: 2rem;
+        margin: 0.5rem 1rem;
+        position: relative;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+            top: -0.5rem;
         }
     }
 }

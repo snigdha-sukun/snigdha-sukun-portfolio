@@ -10,7 +10,12 @@ body {
   color: #1C1C1C;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Kode Mono", monospace;
 }
 
@@ -25,7 +30,7 @@ a {
 
 span {
   font-family: "Syne Mono", monospace;
-  text-decoration: underline;
+  font-weight: 600;
 }
 
 header {
@@ -42,6 +47,7 @@ header {
 }
 header nav ul {
   display: flex;
+  list-style: none;
 }
 header nav ul li {
   margin-left: 2rem;
@@ -82,12 +88,38 @@ footer {
   background-color: #1e3a8a;
   color: #FFFFFF;
 }
-footer a {
-  color: #86A8E7;
+footer .heart {
   text-decoration: none;
+  display: inline-block;
+  animation: jump-shaking 0.83s infinite;
 }
-footer a:hover {
-  text-decoration: underline;
+@keyframes jump-shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(-9px);
+  }
+  35% {
+    transform: translateY(-9px) rotate(17deg);
+  }
+  55% {
+    transform: translateY(-9px) rotate(-17deg);
+  }
+  65% {
+    transform: translateY(-9px) rotate(17deg);
+  }
+  75% {
+    transform: translateY(-9px) rotate(-17deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.years {
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .hero {
@@ -116,7 +148,7 @@ footer a:hover {
   border-radius: 8px;
 }
 .hero a:hover {
-  background-color: #C7A539;
+  background-color: #f5dade;
   color: #1e3a8a;
 }
 
@@ -271,10 +303,6 @@ footer a:hover {
   justify-content: center;
   gap: 2rem;
 }
-.experience span {
-  font-size: 1.5rem;
-  text-decoration: none;
-}
 .experience ul {
   list-style-type: circle;
   padding: 1rem;
@@ -295,11 +323,51 @@ footer a:hover {
   left: 50%;
   margin-left: -3px;
 }
+@media (max-width: 768px) {
+  .experience .timeline::after {
+    left: 31px;
+  }
+}
+@media (max-width: 480px) {
+  .experience .timeline::after {
+    left: 31px;
+  }
+}
 .experience .timeline .timeline-item {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
   width: 50%;
+}
+@media (max-width: 768px) {
+  .experience .timeline .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+}
+@media (max-width: 480px) {
+  .experience .timeline .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .experience .timeline .timeline-item::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+}
+@media (max-width: 480px) {
+  .experience .timeline .timeline-item::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
 }
 .experience .timeline .timeline-item::after {
   content: "";
@@ -320,7 +388,7 @@ footer a:hover {
   border-radius: 6px;
 }
 .experience .timeline .left {
-  left: 0;
+  left: 0%;
 }
 .experience .timeline .left::before {
   content: " ";
@@ -334,8 +402,28 @@ footer a:hover {
   border-width: 10px 0 10px 10px;
   border-color: transparent transparent transparent #FFFFFF;
 }
+@media (max-width: 768px) {
+  .experience .timeline .left::after {
+    left: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .experience .timeline .left::after {
+    left: 15px;
+  }
+}
 .experience .timeline .right {
   left: 50%;
+}
+@media (max-width: 768px) {
+  .experience .timeline .right {
+    left: 0%;
+  }
+}
+@media (max-width: 480px) {
+  .experience .timeline .right {
+    left: 0%;
+  }
 }
 .experience .timeline .right::before {
   content: " ";
@@ -351,6 +439,37 @@ footer a:hover {
 }
 .experience .timeline .right::after {
   left: -16px;
+}
+@media (max-width: 768px) {
+  .experience .timeline .right::after {
+    left: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .experience .timeline .right::after {
+    left: 15px;
+  }
+}
+
+.tech-stack-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tech-stack-container div {
+  height: 2rem;
+  width: 2rem;
+  margin: 0.5rem 1rem;
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.tech-stack-container div:hover {
+  top: -0.5rem;
 }
 
 .skills {
@@ -404,7 +523,17 @@ footer a:hover {
 
 .education {
   background-color: #faf8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.education .education-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  place-items: center;
+}
+.education .education-container p {
+  font-size: 1.2rem;
 }/*# sourceMappingURL=index.css.map */
