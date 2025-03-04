@@ -258,41 +258,65 @@ footer .heart {
 }
 
 .projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   background-color: #f3f8f6;
 }
-@media (max-width: 768px) {
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.projects .project-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-@media (max-width: 480px) {
-  .projects {
-    grid-template-columns: 1fr;
-  }
-}
-.projects .project-card {
+.projects .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 0.5rem;
+  width: 30rem;
   background-color: #FFFFFF;
-  border: 1px solid #86A8E7;
+  cursor: pointer;
+}
+.projects .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.projects .card .card-img {
+  height: 20rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.projects .card .card-content {
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
-.projects .project-card h3 {
-  font-size: 1.25rem;
-  color: #1e3a8a;
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
-.projects .project-card p {
-  font-size: 1rem;
+
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.projects .project-card a {
-  color: #86A8E7;
-  text-decoration: underline;
+.btn-container a {
+  height: 2rem;
+  width: 2rem;
+  margin: 0.5rem 1rem;
+  position: relative;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
-.projects .project-card a:hover {
-  color: #e11d48;
+.btn-container a:hover {
+  top: -0.5rem;
 }
 
 .experience {
