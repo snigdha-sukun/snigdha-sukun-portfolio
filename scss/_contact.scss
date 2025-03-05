@@ -13,27 +13,23 @@
         margin: 0.5rem 0;
         font-size: 1.1rem;
     }
-
-    a {
-        color: v.$sky-blue-muted;
-        text-decoration: underline;
-
-        &:hover {
-            color: v.$highlight;
-        }
-    }
 }
 
 .contact-links-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
+    padding: 0 1rem;
 
     a {
-        height: 2rem;
-        width: 2rem;
+        height: 5rem;
+        width: 5rem;
+        display: flex;
+        align-items: center;
+
+        &:hover .btn-icon-g {
+            fill: v.$highlight;
+        }
     }
 }
 

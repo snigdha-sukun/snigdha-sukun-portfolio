@@ -31,10 +31,22 @@
         padding: 1rem 2rem;
         border-radius: 8px;
         transition: all 0.5s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: max-content;
 
         &:hover {
             background-color: v.$soft-blush-pink;
             color: v.$highlight;
+        }
+
+        path {
+            fill: v.$white;
+        }
+
+        &:hover path {
+            fill: v.$highlight;
         }
     }
 
