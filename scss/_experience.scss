@@ -91,6 +91,14 @@
                 background-color: v.$white;
                 position: relative;
                 border-radius: 6px;
+
+                @include m.respond('tablet') {
+                    padding: 20px;
+                }
+
+                @include m.respond('mobile') {
+                    padding: 15px;
+                }
             }
         }
 

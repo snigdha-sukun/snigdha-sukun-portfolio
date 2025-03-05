@@ -14,6 +14,27 @@
         gap: 1rem;
         place-items: center;
 
+        .education-img {
+            width: 25rem;
+            object-fit:fill;
+        }
+
+        .education-details {
+            @include m.respond('tablet') {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @include m.respond('tablet') {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         p {
             font-size: 1.2rem;
         }

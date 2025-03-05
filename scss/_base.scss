@@ -6,9 +6,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
     scroll-behavior: smooth;
 }
 
@@ -78,6 +75,14 @@ header {
 // Sections
 section {
     padding: 4rem;
+
+    @include m.respond('tablet') {
+        padding: 3rem;
+    }
+
+    @include m.respond('mobile') {
+        padding: 1rem;
+    }
 }
 
 h2 {
@@ -88,6 +93,10 @@ h2 {
     align-items: center;
     gap: 1rem;
 
+    @include m.respond('mobile') {
+        font-size: 2rem;
+    }
+
     span {
         font-family: inherit;
         border-bottom: 2px solid v.$sky-blue-muted;
@@ -96,10 +105,18 @@ h2 {
 
 h3 {
     font-size: 2rem;
+
+    @include m.respond('mobile') {
+        font-size: 1.5rem;
+    }
 }
 
 h4 {
     font-size: 1.5rem;
+
+    @include m.respond('mobile') {
+        font-size: 1.2rem;
+    }
 }
 
 // Footer

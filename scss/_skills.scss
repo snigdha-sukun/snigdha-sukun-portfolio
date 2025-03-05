@@ -13,11 +13,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
 
         div {
             height: 8rem;
             width: 8rem;
-            margin: 0 1rem;
+            margin: 0.5rem 1rem;
             padding: 2rem;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
@@ -26,6 +27,11 @@
             display: inline-block;
             border-radius: 50%;
             background-color: v.$white;
+
+            @include m.respond('tablet') {
+                height: 6rem;
+                width: 6rem;
+            }
 
             .tooltiptext {
                 visibility: hidden;
@@ -42,12 +48,12 @@
                 left: 50%;
             }
 
-            &:hover {
+            &:hover, &:focus {
                 box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
                 top: -0.5rem;
             }
 
-            &:hover .tooltiptext {
+            &:hover .tooltiptext, &:focus .tooltiptext {
                 visibility: visible;
             }
         }

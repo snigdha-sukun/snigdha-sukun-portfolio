@@ -14,7 +14,7 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 2rem;
     }
 
     .card {
@@ -23,7 +23,10 @@
         border-radius: 0.5rem;
         width: 30rem;
         background-color: v.$white;
-        cursor: pointer;
+
+        @include m.respond('mobile') {
+            width: 20rem;
+        }
 
         &:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -54,6 +57,10 @@
     justify-content: center;
     gap: 1rem;
     margin-top: 1rem;
+
+    @include m.respond('mobile') {
+        flex-direction: column;
+    }
 
     a {
         background-color: v.$highlight;

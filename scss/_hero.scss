@@ -6,10 +6,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 2rem;
 
     h1 {
         font-size: 4rem;
         color: v.$primary-blue;
+
+        @include m.respond('tablet') {
+            font-size: 3.5rem;
+        }
+
+        @include m.respond('mobile') {
+            font-size: 2rem;
+        }
     }
 
     p {
@@ -36,6 +45,16 @@
         gap: 0.5rem;
         width: max-content;
 
+        @include m.respond('tablet') {
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+        }
+
+        @include m.respond('mobile') {
+            font-size: 1rem;
+            padding: 1rem;
+        }
+
         &:hover {
             background-color: v.$soft-blush-pink;
             color: v.$highlight;
@@ -50,6 +69,19 @@
         }
     }
 
+    .hero-content {
+
+        @include m.respond('tablet') {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @include m.respond('tablet') {
+        flex-direction: column;
+    }
 }
 
 .hero-button {
@@ -64,6 +96,14 @@
     display: inline-block;
     border-right: 2px solid v.$terracotta;
     animation: typing 10s steps(30) infinite, blink-caret 0.5s step-end infinite;
+
+    @include m.respond('tablet') {
+        font-size: 1.5rem;
+    }
+
+    @include m.respond('mobile') {
+        font-size: 1.2rem;
+    }
 
     @keyframes typing {
 
@@ -89,6 +129,14 @@
     height: 30rem;
     margin-left: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    @include m.respond('tablet') {
+        height: 25rem;
+    }
+
+    @include m.respond('mobile') {
+        height: 20rem;
+    }
 }
 
 .hi_icon {
