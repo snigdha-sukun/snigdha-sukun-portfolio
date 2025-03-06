@@ -28,7 +28,7 @@
             border-radius: 50%;
             background-color: v.$white;
 
-            @include m.respond('tablet') {
+            @include m.respond('mobile') {
                 height: 6rem;
                 width: 6rem;
             }

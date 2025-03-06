@@ -48,18 +48,81 @@ header {
 }
 header nav ul {
   display: flex;
+  justify-content: space-between;
   list-style: none;
 }
 header nav ul li {
   margin-left: 2rem;
 }
 header nav ul li a {
-  color: #1e3a8a;
+  color: #e11d48;
   text-decoration: none;
   font-size: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
 }
 header nav ul li a:hover {
-  color: #e11d48;
+  text-shadow: 0 0 8px rgba(225, 29, 72, 0.6);
+}
+header nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #e11d48;
+  transition: width 0.3s ease;
+}
+header nav ul li a:hover::after {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  header nav {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f5dade;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding: 2rem;
+    font-size: 4rem;
+  }
+  header nav ul {
+    display: block;
+    margin-top: 8rem;
+  }
+}
+header nav .close_menu {
+  display: none;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  header nav .close_menu {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+header .mobile_menu {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  header .mobile_menu {
+    display: block;
+  }
 }
 
 section {
@@ -117,6 +180,22 @@ footer {
   padding: 1rem;
   background-color: #1e3a8a;
   color: #FFFFFF;
+}
+footer .footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+@media (max-width: 480px) {
+  footer .footer-content {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  footer .footer-content .divider {
+    display: none;
+  }
 }
 footer .heart {
   text-decoration: none;
@@ -349,6 +428,18 @@ footer .heart {
   left: 50%;
   transform: translate(-50%, 50%);
 }
+@media (max-width: 768px) {
+  .special-i::after {
+    transform: translate(-50%, 20%);
+  }
+}
+@media (max-width: 480px) {
+  .special-i::after {
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, 20%);
+  }
+}
 
 .about {
   display: flex;
@@ -408,6 +499,11 @@ footer .heart {
   gap: 1rem;
   font-size: 1.2rem;
   margin: 0.5rem 0;
+}
+@media (max-width: 480px) {
+  .contact-detail .contact-label {
+    display: none;
+  }
 }
 .contact-detail a {
   color: #e11d48;
@@ -706,7 +802,7 @@ footer .heart {
   border-radius: 50%;
   background-color: #FFFFFF;
 }
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .skills .skills-container div {
     height: 6rem;
     width: 6rem;

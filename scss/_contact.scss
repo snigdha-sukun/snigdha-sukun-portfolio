@@ -40,6 +40,12 @@
     font-size: 1.2rem;
     margin: 0.5rem 0;
 
+    .contact-label {
+        @include m.respond('mobile') {
+            display: none;
+        }
+    }
+
     a {
         color: v.$highlight;
         text-decoration: none;

@@ -1,4 +1,14 @@
-// Responsive Mixin
+@mixin flex-center($direction: row) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+    transition: $property $duration $timing;
+}
+
 @mixin respond($breakpoint) {
     @if $breakpoint ==tablet {
         @media (max-width: 768px) {

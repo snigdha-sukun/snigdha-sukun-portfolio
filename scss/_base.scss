@@ -53,23 +53,93 @@ header {
     nav {
         ul {
             display: flex;
+            justify-content: space-between;
             list-style: none;
 
             li {
                 margin-left: 2rem;
 
                 a {
-                    color: v.$primary-blue;
+                    color: v.$highlight;
                     text-decoration: none;
                     font-size: 1.5rem;
+                    position: relative;
+                    transition: all 0.3s ease;
 
                     &:hover {
-                        color: v.$highlight;
+                        text-shadow: 0 0 8px rgba(225, 29, 72, 0.6);
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -2px;
+                        width: 0;
+                        height: 2px;
+                        background-color: v.$highlight;
+                        transition: width 0.3s ease;
+                    }
+
+                    &:hover::after {
+                        width: 100%;
                     }
                 }
             }
         }
+
+        @include m.respond('tablet') {
+            display: none;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: v.$soft-blush-pink;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding: 2rem;
+            font-size: 4rem;
+
+            ul {
+                display: block;
+                margin-top: 8rem;
+
+                // a {
+                //     // @include u.margin_y(1rem);
+                // }
+            }
+        }
+
+        .close_menu {
+            display: none;
+            width: 4rem;
+            height: 4rem;
+            cursor: pointer;
+
+            @include m.respond('tablet') {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+        }
     }
+
+    .mobile_menu {
+        display: none;
+        position: absolute;
+        right: 1rem;
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+
+        @include m.respond('tablet') {
+            display: block;
+        }
+    }
+
 }
 
 // Sections
@@ -125,6 +195,23 @@ footer {
     padding: 1rem;
     background-color: v.$primary-blue;
     color: v.$white;
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        @include m.respond('mobile') {
+            flex-direction: column;
+        }
+
+        .divider {
+            @include m.respond('mobile') {
+                display: none;
+            }
+        }
+    }
 
     .heart {
         text-decoration: none;

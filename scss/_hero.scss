@@ -180,5 +180,15 @@
         top: 0;
         left: 50%;
         transform: translate(-50%, 50%);
+
+        @include m.respond('tablet') {
+            transform: translate(-50%, 20%);
+        }
+
+        @include m.respond('mobile') {
+            width: 10px;
+            height: 10px;
+            transform: translate(-50%, 20%);
+        }
     }
 }
