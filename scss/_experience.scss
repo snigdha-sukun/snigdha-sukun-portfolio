@@ -17,6 +17,14 @@
     margin: 0 auto;
     @include m.height-width($width: 100%);
 
+    @include m.respond('tablet') {
+        left: 31px;
+    }
+
+    @include m.respond('mobile') {
+        left: 0;
+    }
+
     &::after {
         content: '';
         position: absolute;
@@ -28,14 +36,13 @@
         margin-left: -3px;
 
         @include m.respond('tablet') {
-            left: 31px;
+            left: 5%;
         }
 
         @include m.respond('mobile') {
-            left: 31px;
+            left: 10%;
         }
     }
-
 }
 
 .timeline-item {
@@ -50,21 +57,8 @@
         padding-right: 25px;
     }
 
-    @include m.respond('mobile') {
-        @include m.height-width($width: 100%);
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-
     &::before {
         @include m.respond('tablet') {
-            left: 60px;
-            border: medium solid white;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
-        }
-
-        @include m.respond('mobile') {
             left: 60px;
             border: medium solid white;
             border-width: 10px 10px 10px 0;
@@ -120,10 +114,6 @@
         @include m.respond('tablet') {
             left: 15px;
         }
-
-        @include m.respond('mobile') {
-            left: 15px;
-        }
     }
 }
 
@@ -131,10 +121,6 @@
     left: 50%;
 
     @include m.respond('tablet') {
-        left: 0%;
-    }
-
-    @include m.respond('mobile') {
         left: 0%;
     }
 
@@ -154,10 +140,6 @@
         left: -16px;
 
         @include m.respond('tablet') {
-            left: 15px;
-        }
-
-        @include m.respond('mobile') {
             left: 15px;
         }
     }
