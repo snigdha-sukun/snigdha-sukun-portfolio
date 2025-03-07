@@ -44,6 +44,12 @@ My work mostly revolves around the **JavaScript ecosystem** — you’ll often f
 
 ---
 
+## Portfolio
+
+🔗 [Check out my portfolio](https://snigdha-sukun-portfolio.vercel.app)
+
+---
+
 ## 📫 Let’s connect
 
 - 💼 [LinkedIn](https://www.linkedin.com/in/snigdhasukun/)
