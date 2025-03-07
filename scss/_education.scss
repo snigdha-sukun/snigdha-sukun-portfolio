@@ -3,40 +3,29 @@
 
 .education {
     background-color: v.$light-yellow;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include m.display-flex($direction: column);
 
-    .education-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        place-items: center;
+}
 
-        .education-img {
-            width: 25rem;
-            object-fit:fill;
-        }
+.education-container {
+    @include m.display-grid;
 
-        .education-details {
-            @include m.respond('tablet') {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-        }
+    @include m.respond('tablet') {
+        @include m.display-flex($direction: column);
+    }
 
-        @include m.respond('tablet') {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    p {
+        font-size: 1.2rem;
+    }
+}
 
-        p {
-            font-size: 1.2rem;
-        }
+.education-img {
+    @include m.height-width($width: 25rem);
+    object-fit: fill;
+}
+
+.education-details {
+    @include m.respond('tablet') {
+        @include m.display-flex($direction: column);
     }
 }

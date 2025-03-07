@@ -3,59 +3,40 @@
 
 // Projects
 .projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    @include m.display-flex($direction: column, $gap: 2rem);
     background-color: v.$light-green;
 
     .project-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 2rem;
+        @include m.display-flex($gap: 2rem, $wrap: wrap);
+    }
+}
+
+.card {
+    @include m.card($border-radius: 0.5rem);
+    @include m.height-width($width: 30rem);
+    background-color: v.$white;
+
+    @include m.respond('mobile') {
+        @include m.height-width($width: 20rem);
     }
 
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-        border-radius: 0.5rem;
-        width: 30rem;
-        background-color: v.$white;
+    .card-img {
+        @include m.height-width($height: 20rem);
+        object-fit: cover;
+    }
 
-        @include m.respond('mobile') {
-            width: 20rem;
-        }
-
-        &:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .card-img {
-            height: 20rem;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1rem;
-            text-align: center;
-        }
+    .card-content {
+        padding: 1rem;
+        text-align: center;
     }
 }
 
 .icon-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    @include m.display-flex($justify: space-between, $gap: 1rem);
 }
 
 .btn-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    @include m.display-flex($gap: 1rem);
     margin-top: 1rem;
 
     @include m.respond('mobile') {
@@ -63,20 +44,11 @@
     }
 
     a {
-        background-color: v.$highlight;
-        color: v.$white;
-        font-weight: bold;
-        padding: 1rem 2rem;
-        border-radius: 8px;
-        transition: all 0.5s ease;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.5rem;
-        height: 3rem;
-        text-wrap: nowrap;
+        @include m.btn;
+        @include m.display-flex($justify: space-between, $gap: 0.5rem);
+        @include m.height-width($height: 3rem);
 
-        &:hover {
+        &:hover, &:focus {
             background-color: v.$soft-blush-pink;
             color: v.$highlight;
         }
@@ -89,11 +61,11 @@
             stroke: v.$white;
         }
 
-        &:hover .btn-icon-g {
+        &:hover .btn-icon-g, &:focus .btn-icon-g {
             fill: v.$highlight;
         }
 
-        &:hover .btn-icon-svg {
+        &:hover .btn-icon-svg, &:focus .btn-icon-svg {
             stroke: v.$highlight;
         }
     }

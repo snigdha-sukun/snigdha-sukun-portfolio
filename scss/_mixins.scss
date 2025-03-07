@@ -1,12 +1,92 @@
-@mixin flex-center($direction: row) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: $direction;
+@use 'variables' as v;
+
+@mixin height-width ($height: auto, $width: auto) {
+    height: $height;
+    width: $width;
 }
 
-@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
-    transition: $property $duration $timing;
+@mixin display-flex($justify: center, $direction: row, $gap: 0, $wrap: no-wrap) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+    flex-direction: $direction;
+    gap: $gap;
+    flex-wrap: $wrap;
+}
+
+@mixin display-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 1rem;
+}
+
+@mixin no-animation {
+    @media (prefers-reduced-motion: reduce) {
+        animation: none;
+    }
+}
+
+@mixin btn {
+    background-color: v.$highlight;
+    color: v.$white;
+    font-weight: bold;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.5s ease;
+    text-wrap: nowrap;
+
+    &:hover,
+    &:focus {
+        background-color: v.$soft-blush-pink;
+        color: v.$highlight;
+    }
+}
+
+@mixin card($border-radius) {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border-radius: $border-radius;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+}
+
+@mixin move-up-hover {
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    margin: 0.5rem 1rem;
+    font-family: v.$font-family-code;
+
+    &:hover,
+    &:focus {
+        top: -0.5rem;
+    }
+
+    &:hover span,
+    &:focus span {
+        visibility: visible;
+        text-decoration: none;
+    }
+}
+
+@mixin tooltip($background: v.$highlight, $font-family: inherit) {
+    visibility: hidden;
+    background-color: $background;
+    color: v.$white;
+    font-family: $font-family;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    @include height-width($width: max-content);
 }
 
 @mixin respond($breakpoint) {

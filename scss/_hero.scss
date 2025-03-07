@@ -3,10 +3,7 @@
 
 // Hero Section
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+    @include m.display-flex($justify: space-between, $gap: 2rem);
 
     h1 {
         font-size: 4rem;
@@ -23,8 +20,9 @@
 
     p {
         margin: 1rem 0;
-        color: v.$sky-blue-muted;
+        color: v.$terracotta;
         font-family: v.$font-family-highlight;
+        font-weight: 500;
     }
 
     span {
@@ -32,60 +30,50 @@
         font-family: inherit;
     }
 
-    a {
-        background-color: v.$highlight;
-        color: v.$white;
-        font-size: 1.5rem;
-        font-weight: bold;
-        padding: 1rem 2rem;
-        border-radius: 8px;
-        transition: all 0.5s ease;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        width: max-content;
-
-        @include m.respond('tablet') {
-            font-size: 1.2rem;
-            padding: 1rem 1.5rem;
-        }
-
-        @include m.respond('mobile') {
-            font-size: 1rem;
-            padding: 1rem;
-        }
-
-        &:hover {
-            background-color: v.$soft-blush-pink;
-            color: v.$highlight;
-        }
-
-        path {
-            fill: v.$white;
-        }
-
-        &:hover path {
-            fill: v.$highlight;
-        }
-    }
-
-    .hero-content {
-
-        @include m.respond('tablet') {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-
     @include m.respond('tablet') {
         flex-direction: column;
     }
 }
 
+
+.hero-content {
+    @include m.respond('tablet') {
+        @include m.display-flex($direction: column);
+    }
+}
+
 .hero-button {
     margin-top: 2rem;
+}
+
+.resume-btn {
+    @include m.btn;
+    @include m.height-width($width: max-content);
+    font-size: 1.5rem;
+    @include m.display-flex($gap: 0.5rem);
+
+    @include m.respond('tablet') {
+        font-size: 1.2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    @include m.respond('mobile') {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    &:hover, &:focus {
+        background-color: v.$soft-blush-pink;
+        color: v.$highlight;
+    }
+
+    path {
+        fill: v.$white;
+    }
+
+    &:hover path, &:focus path {
+        fill: v.$highlight;
+    }
 }
 
 // Add typewriter animation to hero text if you want
@@ -96,6 +84,8 @@
     display: inline-block;
     border-right: 2px solid v.$terracotta;
     animation: typing 10s steps(30) infinite, blink-caret 0.5s step-end infinite;
+
+    @include m.no-animation;
 
     @include m.respond('tablet') {
         font-size: 1.5rem;
@@ -125,23 +115,24 @@
 }
 
 .hero-image {
-    width: auto;
-    height: 30rem;
+    @include m.height-width($height: 30rem);
     margin-left: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     @include m.respond('tablet') {
-        height: 25rem;
+        @include m.height-width($height: 25rem);
     }
 
     @include m.respond('mobile') {
-        height: 20rem;
+        @include m.height-width($height: 20rem);
     }
 }
 
 .hi_icon {
     display: inline-block;
     animation: tilt-n-move-shaking 1s infinite ease-in-out;
+
+    @include m.no-animation;
 
     @keyframes tilt-n-move-shaking {
         0% {
@@ -172,13 +163,13 @@
 
     &::after {
         content: '';
-        width: 15px;
-        height: 15px;
+        @include m.height-width(15px, 15px);
         background-color: v.$highlight;
         border-radius: 50%;
         position: absolute;
         top: 0;
         left: 50%;
+        z-index: 1;
         transform: translate(-50%, 50%);
 
         @include m.respond('tablet') {
@@ -186,8 +177,7 @@
         }
 
         @include m.respond('mobile') {
-            width: 10px;
-            height: 10px;
+            @include m.height-width(10px, 10px);
             transform: translate(-50%, 20%);
         }
     }

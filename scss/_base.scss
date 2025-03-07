@@ -30,116 +30,19 @@ p {
 a {
     font-family: v.$font-family-buttons;
     text-decoration: none;
+    font-weight: bold;
 }
 
 span {
     font-family: v.$font-family-highlight;
     font-weight: 600;
-}
+    cursor: pointer;
+    transition: all 0.3s ease;
 
-// Header
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 5rem;
-    padding: 2rem 1rem;
-    position: sticky;
-    top: 0;
-    background-color: v.$soft-blush-pink;
-    z-index: 1000;
-    box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
-
-    nav {
-        ul {
-            display: flex;
-            justify-content: space-between;
-            list-style: none;
-
-            li {
-                margin-left: 2rem;
-
-                a {
-                    color: v.$highlight;
-                    text-decoration: none;
-                    font-size: 1.5rem;
-                    position: relative;
-                    transition: all 0.3s ease;
-
-                    &:hover {
-                        text-shadow: 0 0 8px rgba(225, 29, 72, 0.6);
-                    }
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        left: 0;
-                        bottom: -2px;
-                        width: 0;
-                        height: 2px;
-                        background-color: v.$highlight;
-                        transition: width 0.3s ease;
-                    }
-
-                    &:hover::after {
-                        width: 100%;
-                    }
-                }
-            }
-        }
-
-        @include m.respond('tablet') {
-            display: none;
-            height: 100%;
-            width: 100%;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: v.$soft-blush-pink;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding: 2rem;
-            font-size: 4rem;
-
-            ul {
-                display: block;
-                margin-top: 8rem;
-
-                // a {
-                //     // @include u.margin_y(1rem);
-                // }
-            }
-        }
-
-        .close_menu {
-            display: none;
-            width: 4rem;
-            height: 4rem;
-            cursor: pointer;
-
-            @include m.respond('tablet') {
-                display: block;
-                position: absolute;
-                top: 1rem;
-                right: 1rem;
-            }
-        }
+    &:hover,
+    &:focus {
+        text-decoration: underline;
     }
-
-    .mobile_menu {
-        display: none;
-        position: absolute;
-        right: 1rem;
-        width: 4rem;
-        height: 4rem;
-        cursor: pointer;
-
-        @include m.respond('tablet') {
-            display: block;
-        }
-    }
-
 }
 
 // Sections
@@ -159,9 +62,7 @@ h2 {
     font-size: 3rem;
     color: v.$primary-blue;
     margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    @include m.display-flex($gap: 1rem);
 
     @include m.respond('mobile') {
         font-size: 2rem;
@@ -170,6 +71,12 @@ h2 {
     span {
         font-family: inherit;
         border-bottom: 2px solid v.$sky-blue-muted;
+        cursor: default;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
     }
 }
 
@@ -189,67 +96,6 @@ h4 {
     }
 }
 
-// Footer
-footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: v.$primary-blue;
-    color: v.$white;
-
-    .footer-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-
-        @include m.respond('mobile') {
-            flex-direction: column;
-        }
-
-        .divider {
-            @include m.respond('mobile') {
-                display: none;
-            }
-        }
-    }
-
-    .heart {
-        text-decoration: none;
-        display: inline-block;
-        animation: jump-shaking 0.83s infinite;
-    }
-
-    @keyframes jump-shaking {
-        0% {
-            transform: translateX(0)
-        }
-
-        25% {
-            transform: translateY(-9px)
-        }
-
-        35% {
-            transform: translateY(-9px) rotate(17deg)
-        }
-
-        55% {
-            transform: translateY(-9px) rotate(-17deg)
-        }
-
-        65% {
-            transform: translateY(-9px) rotate(17deg)
-        }
-
-        75% {
-            transform: translateY(-9px) rotate(-17deg)
-        }
-
-        100% {
-            transform: translateY(0) rotate(0)
-        }
-    }
-}
-
 .years {
     font-size: 1.5rem;
     font-weight: 400;
@@ -257,30 +103,20 @@ footer {
 
 .header-icon {
     display: inline-block;
-    width: 3rem;
-    height: 3rem;
+    @include m.height-width(3rem, 3rem);
     border-bottom: none;
 }
 
 .tech-stack-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    @include m.display-flex($wrap: wrap);
 
     div {
-        height: 2rem;
-        width: 2rem;
-        margin: 0.5rem 1rem;
-        position: relative;
-        top: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
+        @include m.height-width(2rem, 2rem);
+        @include m.display-flex;
+        @include m.move-up-hover;
 
-        &:hover {
-            top: -0.5rem;
+        span {
+            @include m.tooltip($background: v.$terracotta, $font-family:v.$font-family-code);
         }
     }
 }

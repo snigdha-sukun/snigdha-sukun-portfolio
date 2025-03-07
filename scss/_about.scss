@@ -3,26 +3,18 @@
 
 // About Me
 .about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    @include m.display-flex($direction: column, $gap: 2rem);
     background-color: v.$soft-grey;
-
-    .about-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        place-items: center;
-        gap: 1rem;
-
-        @include m.respond('tablet') {
-            display: flex;
-            flex-direction: column;
-        }
-    }
 
     p {
         padding: 0.5rem 0;
+    }
+}
+
+.about-container {
+    @include m.display-grid;
+
+    @include m.respond('tablet') {
+        @include m.display-flex($direction: column);
     }
 }

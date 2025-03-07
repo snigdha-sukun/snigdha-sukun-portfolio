@@ -2,60 +2,41 @@
 @use 'mixins' as m;
 
 .skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+    @include m.display-flex($direction: column, $gap: 2rem);
     background-color: v.$light-blue;
 
-    .skills-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
+}
 
-        div {
-            height: 8rem;
-            width: 8rem;
-            margin: 0.5rem 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            top: 0;
-            display: inline-block;
-            border-radius: 50%;
-            background-color: v.$white;
+.skills-container {
+    @include m.display-flex($wrap: wrap);
+}
 
-            @include m.respond('mobile') {
-                height: 6rem;
-                width: 6rem;
-            }
+.skill-item {
+    @include m.card($border-radius: 50%);
+    @include m.height-width(8rem, 8rem);
+    @include m.move-up-hover;
+    padding: 2rem;
+    display: inline-block;
+    background-color: v.$white;
 
-            .tooltiptext {
-                visibility: hidden;
-                background-color: v.$highlight;
-                color: v.$white;
-                text-align: center;
-                text-decoration: none;
-                padding: 0.5rem 1rem;
-                border-radius: 0.5rem;
-                position: absolute;
-                width: max-content;
-                z-index: 1;
-                bottom: 100%;
-                left: 50%;
-            }
+    @include m.respond('mobile') {
+        @include m.height-width(6rem, 6rem);
+    }
 
-            &:hover, &:focus {
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-                top: -0.5rem;
-            }
+    span {
+        @include m.tooltip($background: v.$highlight, $font-family: v.$font-family-highlight);
+        transition: visibility 0.3s ease;
+    }
 
-            &:hover .tooltiptext, &:focus .tooltiptext {
-                visibility: visible;
-            }
-        }
+
+    &:hover,
+    &:focus {
+        top: -0.5rem;
+    }
+
+    &:hover span
+    &:focus span {
+        visibility: visible;
+        text-decoration: none;
     }
 }

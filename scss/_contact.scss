@@ -3,10 +3,7 @@
 
 // Contact Section
 .contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include m.display-flex($direction: column, $gap: 1rem);
     background-color: v.$warm-beige;
 
     p {
@@ -16,49 +13,46 @@
 }
 
 .contact-links-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include m.display-flex;
     padding: 0 1rem;
 
     a {
         height: 5rem;
         width: 5rem;
-        display: flex;
-        align-items: center;
+        @include m.display-flex;
 
-        &:hover .btn-icon-g {
+        &:hover .btn-icon-g, &:focus .btn-icon-g {
             fill: v.$highlight;
         }
     }
 }
 
 .contact-detail {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+    @include m.display-flex($gap: 1rem);
     font-size: 1.2rem;
     margin: 0.5rem 0;
-
-    .contact-label {
-        @include m.respond('mobile') {
-            display: none;
-        }
-    }
 
     a {
         color: v.$highlight;
         text-decoration: none;
         font-weight: bold;
+        transition: color 0.3s ease;
 
-        &:hover {
+        &:hover, &:focus {
             color: v.$primary-blue;
         }
     }
 }
 
+.contact-label {
+    @include m.display-flex($gap: 0.5rem);
+
+    @include m.respond('mobile') {
+        display: none;
+    }
+}
+
 .contact-icon {
-    height: 2rem;
-    width: 2rem;
+    @include m.height-width(2rem, 2rem);
     display: inline-block;
 }
