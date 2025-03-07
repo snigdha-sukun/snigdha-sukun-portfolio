@@ -316,8 +316,12 @@ header nav ul li a:hover::after, header nav ul li a:focus::after {
   font-weight: bold;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
   text-wrap: nowrap;
+  position: relative;
+  border: none;
+  z-index: 1;
+  overflow: hidden;
   height: auto;
   width: -moz-max-content;
   width: max-content;
@@ -328,6 +332,22 @@ header nav ul li a:hover::after, header nav ul li a:focus::after {
   flex-direction: row;
   gap: 0.5rem;
   flex-wrap: no-wrap;
+}
+.resume-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background-color: #f5dade;
+  transform: translateX(-101%);
+  transition: all 1s ease;
+}
+.resume-btn:is(:hover, :focus)::before {
+  transform: translateX(0);
 }
 .resume-btn:hover, .resume-btn:focus {
   background-color: #f5dade;
@@ -813,6 +833,9 @@ header nav ul li a:hover::after, header nav ul li a:focus::after {
     width: 20rem;
   }
 }
+.card:hover h3, .card:focus h3 {
+  color: #e11d48;
+}
 .card .card-img {
   height: 20rem;
   width: auto;
@@ -853,8 +876,12 @@ header nav ul li a:hover::after, header nav ul li a:focus::after {
   font-weight: bold;
   padding: 1rem 2rem;
   border-radius: 0.5rem;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
   text-wrap: nowrap;
+  position: relative;
+  border: none;
+  z-index: 1;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -863,6 +890,22 @@ header nav ul li a:hover::after, header nav ul li a:focus::after {
   flex-wrap: no-wrap;
   height: 3rem;
   width: auto;
+}
+.btn-container a::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background-color: #f5dade;
+  transform: translateX(-101%);
+  transition: all 1s ease;
+}
+.btn-container a:is(:hover, :focus)::before {
+  transform: translateX(0);
 }
 .btn-container a:hover, .btn-container a:focus {
   background-color: #f5dade;

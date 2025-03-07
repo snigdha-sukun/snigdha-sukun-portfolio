@@ -20,6 +20,10 @@
         @include m.height-width($width: 20rem);
     }
 
+    &:hover h3, &:focus h3 {
+        color: v.$highlight;
+    }
+
     .card-img {
         @include m.height-width($height: 20rem);
         object-fit: cover;
