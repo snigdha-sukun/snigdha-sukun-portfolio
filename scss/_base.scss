@@ -117,7 +117,7 @@ h4 {
         @include m.move-up-hover;
 
         span {
-            @include m.tooltip($background: v.$terracotta, $font-family:v.$font-family-code);
+            @include m.tooltip($background: v.$terracotta, $font-family: v.$font-family-code);
         }
     }
 }

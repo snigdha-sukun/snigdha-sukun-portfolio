@@ -172,7 +172,8 @@ header {
   z-index: 1000;
   box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
 }
-header nav ul {
+
+nav ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -181,20 +182,15 @@ header nav ul {
   flex-wrap: no-wrap;
   list-style: none;
 }
-header nav ul li {
+nav ul a {
   margin-left: 2rem;
-}
-header nav ul li a {
   color: #e11d48;
   text-decoration: none;
   font-size: 1.5rem;
   position: relative;
   transition: all 0.3s ease;
 }
-header nav ul li a:hover, header nav ul li a:focus {
-  text-shadow: 0 0 8px #D16A50;
-}
-header nav ul li a::after {
+nav ul a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -204,11 +200,11 @@ header nav ul li a::after {
   background-color: #e11d48;
   transition: width 0.3s ease;
 }
-header nav ul li a:hover::after, header nav ul li a:focus::after {
+nav ul a:hover::after, nav ul a:focus::after {
   width: 100%;
 }
 @media (max-width: 768px) {
-  header nav {
+  nav {
     height: 100%;
     width: 100%;
     display: none;
@@ -222,7 +218,7 @@ header nav ul li a:hover::after, header nav ul li a:focus::after {
     padding: 2rem;
     font-size: 4rem;
   }
-  header nav ul {
+  nav ul {
     display: block;
     margin-top: 8rem;
   }
@@ -341,9 +337,9 @@ header nav ul li a:hover::after, header nav ul li a:focus::after {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 6px;
+  border-radius: 0.5rem;
   background-color: #f5dade;
-  transform: translateX(-101%);
+  transform: translateX(-100%);
   transition: all 1s ease;
 }
 .resume-btn:is(:hover, :focus)::before {
@@ -899,9 +895,9 @@ header nav ul li a:hover::after, header nav ul li a:focus::after {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 6px;
+  border-radius: 0.5rem;
   background-color: #f5dade;
-  transform: translateX(-101%);
+  transform: translateX(-100%);
   transition: all 1s ease;
 }
 .btn-container a:is(:hover, :focus)::before {
